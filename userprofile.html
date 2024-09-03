@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Page</title>
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="teal" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="login" href="./login.html" class="left">Logout</a>
+                <a id="logout" href="#" class="left" hidden="true">Logout</a>
+                <a id="logo-container" href="index.html" class="brand-logo center">
+                    <img height="50" src="assets/images/logo.png">
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="active">
+                        <a href="userprofile.html" class="userLink">User</a>
+                    </li>
+                    <li>
+                        <a href="adopt.html">Adoption</a>
+                    </li>
+                    <li>
+                        <a href="info.html">Info</a>
+                    </li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse right">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <ul id="nav-mobile" class="side-nav">
+        <div class="background">
+            <img class="responsive-img" src="assets/images/Untitled-3.png">
+        </div>
+        <li>
+            <a class="subheader">Pets</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li class="active">
+            <a href="userprofile.html" class="userLink">User</a>
+        </li>
+        <li>
+            <a href="adopt.html">Adopt</a>
+        </li>
+        <li>
+            <a href="info.html">Info</a>
+        </li>
+    </ul>
+
+    <div id="index-banner" class="parallax-container">
+        <div class="parallax">
+            <img src="assets/images/Veil.jpg" alt="Unsplashed background img 1">
+        </div>
+    </div>
+
+    <div class="row center">
+        <h1 class="header teal-text text-lighten-2">Your Favorites</h1>
+        <h3 id='noUser'></h3>
+    </div>
+
+    <div class="container">
+        <div class="row center">
+            <div class="col m6 s12" id="cards">
+                <img height="200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/IC_Blue_Melody_Flipper_CHA_male_EX1_CACIB.jpg/800px-IC_Blue_Melody_Flipper_CHA_male_EX1_CACIB.jpg" alt="Rusty">
+                    <h4>Tommy</h4>
+                    <p>Age: 1 year</p>
+                    <p>Breed: Labrador</p>
+                    <p>Gender: Male</p>
+                    <p>Location: RescuePet</p>
+                    <p>Pincode: 500040</p>
+                    <a href="#"><button>Contact Shelter</button></a>
+                    <a href="#"><button>Remove</button></a>
+            </div>
+            <div class="col m6 s12" id="cards1">
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="assets/images/Scott.jpg" alt="Unsplashed background img 2">
+        </div>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content" id="mapModal">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Close</a>
+        </div>
+    </div>
+
+    <footer class="page-footer teal">
+        <div class="row center">
+            <div class="col s12">
+                <h6 class="white-text">&copy;ScoutMyPet 2023</h6>
+                <a class="grey-text text-lighten-4" href="https://www.petfinder.com/"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/javascript/frontendPets.js"></script>
+    <script src="assets/javascript/login.js"></script>
+    <script src="assets/javascript/petCard.js"></script>
+    <script src="assets/javascript/userpage.js"></script>
+    <script src="assets/javascript/favorite.js"></script>
+    <script src="assets/javascript/maps.js"></script>
+    <script src="assets/javascript/petLink.js"></script>
+</body>
+
+</html>

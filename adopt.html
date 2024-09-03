@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Adopt</title>
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="teal" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="login" href="./login.html" class="left">Logout</a>
+        <a id="logout" href="#" class="left" hidden="true">Logout</a>
+        <a id="logo-container" href="index.html" class="brand-logo center">
+          <img height="50" src="assets/images/logo.png">
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="userprofile.html" class="userLink">User</a>
+          </li>
+          <li class="active">
+            <a href="adopt.html">Adoption</a>
+          </li>
+          <li>
+            <a href="info.html">Info</a>
+          </li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse right">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+    </nav>
+  </div>
+  
+  <ul id="nav-mobile" class="side-nav">
+    <div class="background">
+      <img class="responsive-img" src="./assets/images/logo.png">
+    </div>
+    <li>
+      <a class="subheader">Pets</a>
+    </li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+      <a href="userprofile.html" class="userLink">User</a>
+    </li>
+    <li class="active">
+      <a href="adopt.html">Adopt</a>
+    </li>
+    <li>
+      <a href="info.html">Info</a>
+    </li>
+  </ul>
+
+
+  <div id="index-banner" class="parallax-container">
+    <div class="parallax">
+      <img src="assets/images/profile.jpg" alt="Unsplashed background img 1">
+    </div>
+  </div>
+
+  <div class="row center">
+    <div class="col s8 offset-s2">
+      <h1 class="header teal-text text-lighten-2">Search for an adoptable pet!</h1>
+      <form>
+        <div class="input-field col l4 s6">
+          <select id="animal">
+            <option value="">No Pref</option>
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+          </select>
+          <label>Pet</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <select id="breed">
+            <option value="">No Pref</option>
+            <option value="GoldenRetriver">Golden Retriver</option>
+            <option value="DomesticShorthair">Domestic Shorthair</option>
+            <option value="GermanShepherd">German Shepherd</option>
+            <option value="Labrador">Labrador</option>
+            <option value="Chartreux">Chartreux</option>
+          </select>
+          <label>Breed</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <select id="sex">
+            <option value="">No Pref</option>
+            <option value="F">Female</option>
+            <option value="M">Male</option>
+          </select>
+          <label>Gender</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <select id="age">
+            <option value="">No Pref</option>
+            <option value="Baby">Baby</option>
+            <option value="Young">Young</option>
+            <option value="Adult">Adult</option>
+            <option value="Senior">Senior</option>
+          </select>
+          <label>Age</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <select id="size">
+            <option value="">No Pref</option>
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+            <option value="XL">Extra Large</option>
+          </select>
+          <label>Size</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <input id="pincode" value="" type="number" data-length="6">
+          <label for="Pincode">Pincode</label>
+        </div>
+        <div class="col l4 s6 left">
+          <button class="btn waves-effect waves-light" type="submit" id="search" name="action">Search
+            <i class="material-icons left">search</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row center">
+      <div class="col m4 s12" id="cards">
+        <img height="200px" src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Female_British_Shorthair_2_years_and_3_months_old.jpg" alt="Cat">
+            <h4>Fluffy</h4>
+            <p>Age: 2 years</p>
+            <p>Breed: Domestic Shorthair</p>
+            <p>Gender: Female</p>
+            <p>Location: RescuePet</p>
+            <p>Pincode: 500072</p>
+            <div class="col m1 s12"></div>
+            <a href="./form.html"><button>Contact Shelter</button></a>
+            <a href="#"><button>Favourite</button></a>
+      </div>
+      <div class="col m4 s12" id="cards" >
+        <img height="200px" src="https://www.goldenrescue.com/wp-content/uploads/2020/02/Joe1.jpeg" alt="Rusty">
+            <h4>Rusty</h4>
+            <p>Age: 5 years</p>
+            <p>Breed: Golden Retriever</p>
+            <p>Gender: Male</p>
+            <p>Location: PawShelter</p>
+            <p>Pincode: 500090</p>
+            <a href="./form.html"><button>Contact Shelter</button></a>
+            <a href="#"><button>Favourite</button></a>
+      </div>
+      <div class="col m4 s12" id="cards">
+        <img height="200px" src="https://images.saymedia-content.com/.image/t_share/MTc0MDcyMTY0MDU4NjcwNjU4/german-shepherd-height-and-weight.jpg" alt="Rusty">
+            <h4>Max</h4>
+            <p>Age: 7 years</p>
+            <p>Breed: German Shepherd</p>
+            <p>Gender: Female</p>
+            <p>Location: DogHome</p>
+            <p>Pincode: 500030</p>
+            <a href="./form.html"><button>Contact Shelter</button></a>
+            <a href="#"><button>Favourite</button></a>
+      </div>
+      <div class="col m4 s12" id="cards">
+        <img height="200px" src="https://hips.hearstapps.com/hmg-prod/images/labrador-puppy-royalty-free-image-1626252338.jpg?crop=0.667xw:1.00xh;0.173xw,0&resize=2048:*" alt="Rusty">
+            <h4>Pluto</h4>
+            <p>Age: 1 year</p>
+            <p>Breed: Labrador</p>
+            <p>Gender: Male</p>
+            <p>Location: PetHouse</p>
+            <p>Pincode: 500065</p>
+            <a href="./form.html"><button>Contact Shelter</button></a>
+            <a href="#"></a><button>Favourite</button></a>
+      </div>
+      <div class="col m4 s12" id="cards">
+        <img height="200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/IC_Blue_Melody_Flipper_CHA_male_EX1_CACIB.jpg/800px-IC_Blue_Melody_Flipper_CHA_male_EX1_CACIB.jpg" alt="Rusty">
+            <h4>Tommy</h4>
+            <p>Age: 1 year</p>
+            <p>Breed: Labrador</p>
+            <p>Gender: Male</p>
+            <p>Location: RescuePet</p>
+            <p>Pincode: 500040</p>
+            <a href="./form.html"><button>Contact Shelter</button></a>
+            <a href="#"><button>Favourite</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="assets/images/Adopt.jpg" alt="Unsplashed background img 2">
+    </div>
+  </div>
+
+  <div id="modal1" class="modal">
+    <div class="modal-content" id="mapModal">
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Close</a>
+    </div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="row center">
+      <div class="col s12">
+        <h6 class="white-text">&copy;ScoutMyPet 2023</h6>
+        <p class="grey-text text-lighten-4"></p>
+        <a class="grey-text text-lighten-4" href="https://www.petfinder.com/"></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/javascript/frontendPets.js"></script>
+  <script src="assets/javascript/breedList.js"></script>
+  <script src="assets/javascript/petCard.js"></script>
+  <script src="assets/javascript/adoption.js"></script>
+</body>
+
+</html>

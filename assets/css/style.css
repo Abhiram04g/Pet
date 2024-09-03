@@ -1,0 +1,26 @@
+h1,h2,h4,a {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h2>span,h1>span{
+    font-family: "Roboto", sans-serif;
+}
+.desc{
+    overflow-y:auto;
+    overflow-x:hidden;
+    max-height:200px;
+}
+footer{
+    padding:5px;
+}
+.cardBtn{
+    width: 100%;
+    color:#ffab40;
+}
+.landingBtn{
+    width:230px;
+}
+@media only screen and (max-width: 992px){
+    .parallax-container {
+        height: 375px;
+    }
+}
